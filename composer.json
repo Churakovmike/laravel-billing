@@ -1,0 +1,43 @@
+{
+    "name": "churakovmike/laravel-finance",
+    "type": "library",
+    "description": "",
+    "keywords": [
+        "laravel",
+        "laravel finance",
+        "laravel finance module",
+        "php finance system"
+    ],
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "authors": [
+        {
+            "name": "Churakov Mike"
+        }
+    ],
+    "require": {
+        "illuminate/console": "^5.5|^6|^7",
+        "illuminate/contracts": "^5.5|^6|^7",
+        "illuminate/database": "^5.5|^6|^7",
+        "illuminate/http": "^5.5|^6|^7",
+        "illuminate/pagination": "^5.5|^6|^7",
+        "illuminate/support": "^5.5|^6|^7",
+        "illuminate/view": "^5.5|^6|^7"
+    },
+    "autoload": {
+        "psr-4": {
+            "ChurakovMike\\Finance\\": "src/"
+        },
+        "classmap": "src/"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ChurakovMike\\Finance\\FinanceServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
