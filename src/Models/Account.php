@@ -2,8 +2,9 @@
 
 declare(strict_types=1);
 
-namespace ChurakovMike\Models;
+namespace ChurakovMike\Finance\Models;
 
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -23,4 +24,20 @@ class Account extends Model
      * @var string $table
      */
     protected $table = 'account';
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function type()
+    {
+        return $this->hasOne(AccountType::class);
+    }
 }
