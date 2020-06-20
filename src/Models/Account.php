@@ -21,6 +21,14 @@ use Illuminate\Database\Eloquent\Model;
 class Account extends Model
 {
     /**
+     * Main account types
+     */
+    const
+        TYPE_MAIN = 1,
+        TYPE_TRANSIT = 2,
+        TYPE_TEST = 20;
+
+    /**
      * @var string $table
      */
     protected $table = 'account';
