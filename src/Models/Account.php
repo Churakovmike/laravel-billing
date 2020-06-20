@@ -34,6 +34,15 @@ class Account extends Model
     protected $table = 'accounts';
 
     /**
+     * @var string[]
+     */
+    protected $fillable = [
+        'type_id',
+        'user_id',
+        'balance',
+    ];
+
+    /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function user()
