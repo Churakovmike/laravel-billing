@@ -11,8 +11,9 @@ use Illuminate\Support\Facades\Facade;
  * Class Account.
  * @package ChurakovMike\Finance\Facades
  *
- * @method AccountService addAccountType()
- * @method AccountService addAccount()
+ * @method static AccountService addAccountType(string $name)
+ * @method static AccountService addAccount(int $accountType, int $userId)
+ * @method static AccountService removeAccountType(int $id)
  */
 class Account extends Facade
 {

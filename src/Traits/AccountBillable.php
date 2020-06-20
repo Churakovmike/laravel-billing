@@ -22,4 +22,9 @@ trait AccountBillable
     {
         //
     }
+
+    public function getAccounts()
+    {
+        //
+    }
 }

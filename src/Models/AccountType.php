@@ -20,9 +20,16 @@ use Illuminate\Database\Eloquent\Model;
 class AccountType extends Model
 {
     /**
+     * @var string[]
+     */
+    protected $fillable = [
+        'name',
+    ];
+
+    /**
      * @var string $table
      */
-    protected $table = 'account_type';
+    protected $table = 'account_types';
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

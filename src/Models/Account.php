@@ -31,7 +31,7 @@ class Account extends Model
     /**
      * @var string $table
      */
-    protected $table = 'account';
+    protected $table = 'accounts';
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
