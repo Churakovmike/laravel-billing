@@ -6,6 +6,7 @@ namespace ChurakovMike\Finance\Traits;
 
 use App\User;
 use ChurakovMike\Finance\Models\Account;
+use ChurakovMike\Finance\Models\Operation;
 use Illuminate\Support\Facades\DB;
 
 /**
@@ -33,7 +34,7 @@ trait AccountBillable
                 ->where('type_id', $accountType)
                 ->firstOrFail();
 
-            $transferAccount = $user->getAccounnts()
+            $transferAccount = $user->getAccounts()
                 ->where('type_id', $accountType)
                 ->firstOrFail();
 
@@ -42,7 +43,14 @@ trait AccountBillable
             ]);
 
             $transferAccount->update([
-                'balance' => $account->balance + $amount,
+                'balance' => $transferAccount->balance + $amount,
+            ]);
+
+            Operation::create([
+                'account_from' => $account->id,
+                'account_to' => $transferAccount->id,
+                'amount' => $amount,
+                'comment' => "Transfer momey from {$this->email} to {$user->email}",
             ]);
             DB::commit();
         } catch (\Throwable $exception) {

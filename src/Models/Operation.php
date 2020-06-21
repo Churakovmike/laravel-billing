@@ -23,4 +23,14 @@ class Operation extends Model
      * @var string
      */
     protected $table = 'operations';
+
+    /**
+     * @var string[]
+     */
+    protected $fillable = [
+        'account_from',
+        'account_to',
+        'amount',
+        'comment',
+    ];
 }
